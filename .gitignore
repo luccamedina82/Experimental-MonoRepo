@@ -1,0 +1,43 @@
+# Dependencies
+node_modules/
+
+# Environment files
+.env
+.env.*
+!.env.example
+
+# Build outputs
+dist/
+build/
+.next/
+out/
+
+# Test & coverage
+coverage/
+.nyc_output/
+
+# Turbo / tooling caches
+.turbo/
+.cache/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# TypeScript
+*.tsbuildinfo
+
+# Prisma generated client output (local generation)
+packages/database/generated/
+
+# Docker local overrides
+docker-compose.override.yml
+
+# IDE / OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
