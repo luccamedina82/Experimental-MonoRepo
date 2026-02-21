@@ -1,9 +1,10 @@
 {
   "extends": "../typescript-config/base.json",
   "compilerOptions": {
-    "outDir": "dist",
+    "outDir": "./dist",
     "rootDir": ".",
-    "baseUrl": "."
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true
   },
-  "include": ["src/**/*", "prisma.config.ts"]
+  "include": ["src", "generated"]
 }

@@ -3,16 +3,11 @@
   "extends": "./base.json",
   "compilerOptions": {
     "target": "ES2023",
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
     "sourceMap": true,
-    "declaration": true,
     "removeComments": true,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "allowSyntheticDefaultImports": true,
-    "resolvePackageJsonExports": true, 
-
     "strictNullChecks": true,
     "noImplicitAny": false,
     "strictBindCallApply": false,

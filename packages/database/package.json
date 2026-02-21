@@ -3,14 +3,18 @@
   "version": "1.0.0",
   "private": true,
   "description": "",
-  "main": "index.js",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
   "scripts": {
     "db:generate": "dotenv -e ../../.env -- prisma generate",
     "db:push": "dotenv -e ../../.env -- prisma db push",
     "db:studio": "dotenv -e ../../.env -- prisma studio",
-    "db:migrate": "dotenv -e ../../.env -- prisma migrate dev"
+    "db:migrate": "dotenv -e ../../.env -- prisma migrate dev",
+    "db:seed": "dotenv -e ../../.env -- tsx prisma/seed.ts",
+    "build": "tsc -p tsconfig.json"
   },
   "devDependencies": {
+    "@types/bcryptjs": "^3.0.0",
     "@types/node": "^25.3.0",
     "@types/pg": "^8.16.0",
     "prisma": "catalog:prisma",
@@ -22,7 +26,10 @@
   "license": "ISC",
   "packageManager": "pnpm@10.30.0",
   "dependencies": {
+    "@nestjs/common": "^11.1.14",
     "@prisma/adapter-pg": "^7.4.1",
+    "@prisma/client": "^7.4.1",
+    "bcryptjs": "^3.0.3",
     "dotenv": "^17.3.1",
     "pg": "^8.18.0"
   },
