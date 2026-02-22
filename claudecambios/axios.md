@@ -1,3 +1,5 @@
+// /lib/axios.ts
+
 import axios from 'axios'
 
 export const api = axios.create({
@@ -46,6 +48,9 @@ api.interceptors.response.use(
         return api(originalRequest)
       } catch (refreshError) {
         processQueue(refreshError)
+        if (typeof window !== 'undefined') {
+          window.location.href = '/login'
+        }
         return Promise.reject(refreshError)
       } finally {
         isRefreshing = false

@@ -1,3 +1,5 @@
+// app/web/tsconfig.json 
+
 {
   "extends": "@repo/typescript-config/next.json",
   "compilerOptions": { 
@@ -13,6 +15,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-, "src/proxy.ts"  ],
+  ],
   "exclude": ["node_modules"]
 }
