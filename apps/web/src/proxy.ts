@@ -7,7 +7,6 @@ const encodedToken = new TextEncoder().encode(JWT_SECRET)
 export default async function proxy(request: NextRequest) {
     const accessToken = request.cookies.get('token')?.value;
     const refreshToken = request.cookies.get('refresh_token')?.value;
-
     if (!accessToken && !refreshToken) {
         return NextResponse.redirect(new URL('/login', request.url));
     }
@@ -28,11 +27,11 @@ export default async function proxy(request: NextRequest) {
     try {
         const apiUrl = process.env.API_URL_INTERNAL || 'http://localhost:3000';
         const refreshResponse = await fetch(`${apiUrl}/auth/refresh`, {
-        method: 'POST',
-        headers: {
-            Cookie: `refresh_token=${refreshToken}`,
-        },
-        cache: 'no-store',
+            method: 'POST',
+            headers: {
+                Cookie: `refresh_token=${refreshToken}`,
+            },
+            cache: 'no-store',
         })
         if (!refreshResponse.ok) {
             throw new Error('Refresh token invalido o expirado en el backend');
@@ -74,6 +73,6 @@ function expulsarAlLogin(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/dashboard/:path*', 
+    '/dashboard/:path*',
   ],
 };

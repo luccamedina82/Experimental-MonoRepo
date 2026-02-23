@@ -1,5 +1,3 @@
-import { cookies } from 'next/headers'
-import { redirect } from 'next/navigation'
 
 export default async function AuthLayout({
   children,
@@ -13,6 +11,5 @@ export default async function AuthLayout({
   // if (hasToken || hasRefreshToken) {
   //   redirect('/dashboard')
   // }
-
-  return <div>{children}</div>
+  return (<div>{children}</div>)
 }
